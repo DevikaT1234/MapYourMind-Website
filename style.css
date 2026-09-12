@@ -121,10 +121,9 @@ footer {
 
 
 /* ======================================================
-   GREEN BACKGROUNDS FOR MAIN INFORMATION SECTIONS
+   OUR COUNSELLING SERVICES
    ====================================================== */
 
-/* OUR COUNSELLING SERVICES */
 .service-information {
     max-width: 1000px;
     margin: 40px auto;
@@ -143,6 +142,7 @@ footer {
 
 
 /* SERVICE CARDS */
+
 .service-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -179,7 +179,8 @@ footer {
    HOW COUNSELLING CAN HELP
    ====================================================== */
 
-.extra-section {
+/* Only the How Counselling Can Help section */
+#how-counselling-helps {
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
@@ -187,12 +188,11 @@ footer {
     border-radius: 10px;
 }
 
-.extra-section h2 {
+#how-counselling-helps h2 {
     margin-bottom: 20px;
 }
 
-/* Individual information boxes remain white */
-.extra-section .info-card {
+#how-counselling-helps .info-card {
     border: 1px solid #ddd;
     padding: 20px;
     margin: 15px 0;
@@ -204,6 +204,14 @@ footer {
 /* ======================================================
    HOW IT WORKS
    ====================================================== */
+
+#how-it-works {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #d9f2d9;
+    border-radius: 10px;
+}
 
 .steps-container {
     display: flex;
