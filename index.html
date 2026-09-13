@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <title>MapYourMind - Support when life feels overwhelming</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
 
     <style>
+
+        /* ======================================================
+           GENERAL
+           ====================================================== */
+
         .live-chat {
             border: 1px solid #ccc;
             padding: 15px;
@@ -27,6 +36,11 @@
             padding: 8px 12px;
         }
 
+
+        /* ======================================================
+           EXTRA SECTIONS
+           ====================================================== */
+
         .extra-section {
             max-width: 1000px;
             margin: 40px auto;
@@ -42,6 +56,11 @@
             border-radius: 8px;
             background: white;
         }
+
+
+        /* ======================================================
+           HOW IT WORKS
+           ====================================================== */
 
         .steps-container {
             display: flex;
@@ -65,6 +84,11 @@
             font-weight: bold;
         }
 
+
+        /* ======================================================
+           FAQ
+           ====================================================== */
+
         .faq-question {
             cursor: pointer;
             padding: 15px;
@@ -77,6 +101,11 @@
             background: white;
         }
 
+
+        /* ======================================================
+           EMERGENCY SUPPORT
+           ====================================================== */
+
         .emergency-box {
             border: 2px solid #cc0000;
             padding: 20px;
@@ -84,6 +113,11 @@
             max-width: 900px;
             background: #fff5f5;
         }
+
+
+        /* ======================================================
+           CONTACT BUTTONS
+           ====================================================== */
 
         .contact-button {
             display: inline-block;
@@ -95,6 +129,11 @@
             color: #0000ee;
         }
 
+
+        /* ======================================================
+           HELPFUL INFORMATION
+           ====================================================== */
+
         .resource-list {
             padding-left: 20px;
         }
@@ -102,6 +141,11 @@
         .resource-list li {
             margin-bottom: 12px;
         }
+
+
+        /* ======================================================
+           BACK TO TOP
+           ====================================================== */
 
         .back-to-top {
             position: fixed;
@@ -114,7 +158,10 @@
             border-radius: 5px;
         }
 
-        /* SERVICE LINKS */
+
+        /* ======================================================
+           SERVICE LINKS
+           ====================================================== */
 
         .service-links {
             max-width: 1000px;
@@ -137,19 +184,23 @@
             color: blue;
             font-size: 18px;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .service-links a:hover {
             text-decoration: underline;
         }
 
-        /* SERVICE INFORMATION */
+
+        /* ======================================================
+           SERVICE INFORMATION
+           ====================================================== */
 
         .service-information {
             max-width: 1000px;
             margin: 40px auto;
             padding: 30px;
-            background: #f9f9f9;
+            background: #d9f2d9;
             border-radius: 10px;
         }
 
@@ -161,32 +212,77 @@
             line-height: 1.7;
         }
 
-        /* SERVICE CARDS */
+
+        /* ======================================================
+           SERVICE CARDS
+           ====================================================== */
 
         .service-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
             margin-top: 25px;
         }
 
-        .service-cards .info-card {
-            margin: 0;
-            height: 100%;
-            box-sizing: border-box;
+        /*
+           Hide all service information by default.
+           JavaScript will show only the service selected by
+           the visitor.
+        */
+
+        .service-detail {
+            display: none;
         }
 
-        .service-cards .info-card h2 {
-            margin-top: 0;
+        .service-detail.active {
+            display: block;
         }
 
-        .service-cards .contact-button {
-            margin-top: 10px;
+        .service-detail img {
+            display: block;
+            max-width: 100%;
+            width: 500px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
         }
+
+
+        /* ======================================================
+           SERVICE SELECTION MESSAGE
+           ====================================================== */
+
+        .service-selection-message {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+
+        /* ======================================================
+           FEEDBACK IMAGE
+           ====================================================== */
+
+        .feedback-image {
+            display: block;
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
 
 <header>
 
@@ -208,6 +304,11 @@
 
 </header>
 
+
+<!-- ======================================================
+     LOGO SECTION
+     ====================================================== -->
+
 <section class="logo-section">
 
     <img
@@ -224,7 +325,10 @@
 
 </section>
 
-<!-- NAVIGATION -->
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
 
 <nav>
 
@@ -239,50 +343,61 @@
         </li>
 
         <li>
-            <a href="#stress">Stress</a>
+            <a href="#stress" onclick="showService('stress')">Stress</a>
         </li>
 
         <li>
-            <a href="#anxiety">Anxiety</a>
+            <a href="#anxiety" onclick="showService('anxiety')">Anxiety</a>
         </li>
 
         <li>
-            <a href="#relationships">Relationships</a>
+            <a href="#relationships" onclick="showService('relationships')">Relationships</a>
         </li>
 
         <li>
-            <a href="#self-awareness">Self-awareness</a>
+            <a href="#self-awareness" onclick="showService('self-awareness')">Self-awareness</a>
         </li>
 
         <li>
-            <a href="#addiction">Addiction</a>
+            <a href="#addiction" onclick="showService('addiction')">Addiction</a>
         </li>
 
         <li>
-            <a href="#bereavement">Bereavement</a>
+            <a href="#bereavement" onclick="showService('bereavement')">Bereavement</a>
         </li>
 
         <li>
-            <a href="#couples-therapy">Couples Therapy</a>
+            <a href="#couples-therapy" onclick="showService('couples-therapy')">
+                Couples Therapy
+            </a>
         </li>
 
         <li>
-            <a href="#work-related-stress">Work-related Stress</a>
+            <a href="#work-related-stress" onclick="showService('work-related-stress')">
+                Work-related Stress
+            </a>
         </li>
 
         <li>
-            <a href="#neurodiversity">Neurodiversity</a>
+            <a href="#neurodiversity" onclick="showService('neurodiversity')">
+                Neurodiversity
+            </a>
         </li>
 
         <li>
-            <a href="#trauma">Trauma</a>
+            <a href="#trauma" onclick="showService('trauma')">
+                Trauma
+            </a>
         </li>
 
     </ul>
 
 </nav>
 
-<!-- HERO -->
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
 
 <section class="hero">
 
@@ -345,7 +460,10 @@
 
 </section>
 
-<!-- NEWS -->
+
+<!-- ======================================================
+     HELPFUL INFORMATION
+     ====================================================== -->
 
 <section id="news" class="section">
 
@@ -374,7 +492,10 @@
 
 </section>
 
-<!-- CLICKABLE SERVICE LINKS -->
+
+<!-- ======================================================
+     CLICKABLE SERVICE LINKS
+     ====================================================== -->
 
 <section class="service-links">
 
@@ -388,68 +509,103 @@
     <ul>
 
         <li>
-            <a href="#stress">Stress Management</a>
+            <a href="#stress" onclick="showService('stress')">
+                Stress Management
+            </a>
         </li>
 
         <li>
-            <a href="#anxiety">Anxiety</a>
+            <a href="#anxiety" onclick="showService('anxiety')">
+                Anxiety
+            </a>
         </li>
 
         <li>
-            <a href="#relationships">Relationships</a>
+            <a href="#relationships" onclick="showService('relationships')">
+                Relationships
+            </a>
         </li>
 
         <li>
-            <a href="#self-awareness">Self-awareness</a>
+            <a href="#self-awareness" onclick="showService('self-awareness')">
+                Self-awareness
+            </a>
         </li>
 
         <li>
-            <a href="#addiction">Addiction</a>
+            <a href="#addiction" onclick="showService('addiction')">
+                Addiction
+            </a>
         </li>
 
         <li>
-            <a href="#bereavement">Bereavement</a>
+            <a href="#bereavement" onclick="showService('bereavement')">
+                Bereavement
+            </a>
         </li>
 
         <li>
-            <a href="#couples-therapy">Couples Therapy</a>
+            <a href="#couples-therapy" onclick="showService('couples-therapy')">
+                Couples Therapy
+            </a>
         </li>
 
         <li>
-            <a href="#work-related-stress">Work-related Stress</a>
+            <a href="#work-related-stress" onclick="showService('work-related-stress')">
+                Work-related Stress
+            </a>
         </li>
 
         <li>
-            <a href="#neurodiversity">Neurodiversity</a>
+            <a href="#neurodiversity" onclick="showService('neurodiversity')">
+                Neurodiversity
+            </a>
         </li>
 
         <li>
-            <a href="#trauma">Trauma</a>
+            <a href="#trauma" onclick="showService('trauma')">
+                Trauma
+            </a>
         </li>
 
     </ul>
 
 </section>
 
-<!-- ====================================================== -->
-<!-- SERVICE INFORMATION -->
-<!-- ====================================================== -->
+
+<!-- ======================================================
+     SERVICE INFORMATION
+     ====================================================== -->
 
 <section id="services" class="service-information">
 
     <h2>Our Counselling Services</h2>
 
     <p>
-        MapYourMind offers a confidential and supportive space to explore a
-        range of personal, emotional and relationship concerns. Below is an
-        overview of the different areas where counselling may provide support.
+        Click on one of the services above to view information
+        about that individual area of counselling.
     </p>
+
+
+    <div class="service-selection-message" id="service-selection-message">
+
+        <h3>Select a service</h3>
+
+        <p>
+            Please click on one of the services to view more information.
+        </p>
+
+    </div>
+
 
     <div class="service-cards">
 
-        <!-- STRESS -->
 
-        <article id="stress" class="info-card">
+        <!-- ==================================================
+             STRESS
+             ================================================== -->
+
+        <article id="stress" class="info-card service-detail">
 
             <h2>Stress Management</h2>
 
@@ -471,11 +627,19 @@
 
         </article>
 
-        <!-- ANXIETY -->
 
-        <article id="anxiety" class="info-card">
+        <!-- ==================================================
+             ANXIETY
+             ================================================== -->
+
+        <article id="anxiety" class="info-card service-detail">
 
             <h2>Anxiety</h2>
+
+            <img
+                src="images/Anxiety pic.png"
+                alt="Illustration showing some common feelings associated with anxiety"
+            >
 
             <p>
                 Anxiety may involve persistent worry, fear, nervousness or
@@ -496,9 +660,12 @@
 
         </article>
 
-        <!-- RELATIONSHIPS -->
 
-        <article id="relationships" class="info-card">
+        <!-- ==================================================
+             RELATIONSHIPS
+             ================================================== -->
+
+        <article id="relationships" class="info-card service-detail">
 
             <h2>Relationships</h2>
 
@@ -520,9 +687,12 @@
 
         </article>
 
-        <!-- SELF-AWARENESS -->
 
-        <article id="self-awareness" class="info-card">
+        <!-- ==================================================
+             SELF-AWARENESS
+             ================================================== -->
+
+        <article id="self-awareness" class="info-card service-detail">
 
             <h2>Self-awareness</h2>
 
@@ -544,9 +714,12 @@
 
         </article>
 
-        <!-- ADDICTION -->
 
-        <article id="addiction" class="info-card">
+        <!-- ==================================================
+             ADDICTION
+             ================================================== -->
+
+        <article id="addiction" class="info-card service-detail">
 
             <h2>Addiction</h2>
 
@@ -569,9 +742,12 @@
 
         </article>
 
-        <!-- BEREAVEMENT -->
 
-        <article id="bereavement" class="info-card">
+        <!-- ==================================================
+             BEREAVEMENT
+             ================================================== -->
+
+        <article id="bereavement" class="info-card service-detail">
 
             <h2>Bereavement</h2>
 
@@ -593,9 +769,12 @@
 
         </article>
 
-        <!-- COUPLES THERAPY -->
 
-        <article id="couples-therapy" class="info-card">
+        <!-- ==================================================
+             COUPLES THERAPY
+             ================================================== -->
+
+        <article id="couples-therapy" class="info-card service-detail">
 
             <h2>Couples Therapy</h2>
 
@@ -617,9 +796,12 @@
 
         </article>
 
-        <!-- WORK-RELATED STRESS -->
 
-        <article id="work-related-stress" class="info-card">
+        <!-- ==================================================
+             WORK-RELATED STRESS
+             ================================================== -->
+
+        <article id="work-related-stress" class="info-card service-detail">
 
             <h2>Work-related Stress</h2>
 
@@ -640,9 +822,12 @@
 
         </article>
 
-        <!-- NEURODIVERSITY -->
 
-        <article id="neurodiversity" class="info-card">
+        <!-- ==================================================
+             NEURODIVERSITY
+             ================================================== -->
+
+        <article id="neurodiversity" class="info-card service-detail">
 
             <h2>Neurodiversity</h2>
 
@@ -663,9 +848,12 @@
 
         </article>
 
-        <!-- TRAUMA -->
 
-        <article id="trauma" class="info-card">
+        <!-- ==================================================
+             TRAUMA
+             ================================================== -->
+
+        <article id="trauma" class="info-card service-detail">
 
             <h2>Trauma</h2>
 
@@ -690,7 +878,10 @@
 
 </section>
 
-<!-- LIVE CHAT -->
+
+<!-- ======================================================
+     LIVE CHAT
+     ====================================================== -->
 
 <section id="live-chat" class="section">
 
@@ -720,30 +911,27 @@
 
 </section>
 
-<!-- TESTIMONIALS -->
+
+<!-- ======================================================
+     TESTIMONIALS / FEEDBACK
+     ====================================================== -->
 
 <section id="testimonials" class="section dark">
 
-    <h2>Testimonials</h2>
+    <h2>Feedback</h2>
 
-    <div class="Testimonials">
-
-        <div class="player">
-
-            <img
-                src="assets/images/page_background.jpg"
-                alt="Testimonials"
-            >
-
-            <h3>Mason Mount</h3>
-
-        </div>
-
-    </div>
+    <img
+        src="images/Feedback pic.png"
+        alt="Client feedback for MapYourMind"
+        class="feedback-image"
+    >
 
 </section>
 
-<!-- CONTACT US -->
+
+<!-- ======================================================
+     CONTACT US
+     ====================================================== -->
 
 <section id="contact-us" class="section">
 
@@ -764,6 +952,7 @@
         </li>
 
         <li>
+
             You can also follow us on our social media page:
 
             <a
@@ -779,7 +968,10 @@
 
 </section>
 
-<!-- HOW COUNSELLING CAN HELP -->
+
+<!-- ======================================================
+     HOW COUNSELLING CAN HELP
+     ====================================================== -->
 
 <section id="how-counselling-helps" class="extra-section">
 
@@ -831,7 +1023,10 @@
 
 </section>
 
-<!-- HOW IT WORKS -->
+
+<!-- ======================================================
+     HOW IT WORKS
+     ====================================================== -->
 
 <section id="how-it-works" class="extra-section">
 
@@ -854,6 +1049,7 @@
 
         </div>
 
+
         <div class="step-card">
 
             <div class="step-number">
@@ -868,6 +1064,7 @@
             </p>
 
         </div>
+
 
         <div class="step-card">
 
@@ -888,7 +1085,10 @@
 
 </section>
 
-<!-- AREAS OF SUPPORT -->
+
+<!-- ======================================================
+     AREAS OF SUPPORT
+     ====================================================== -->
 
 <section id="areas-of-support" class="extra-section">
 
@@ -901,11 +1101,14 @@
 
 </section>
 
-<!-- FAQ -->
+
+<!-- ======================================================
+     FAQ
+     ====================================================== -->
 
 <section id="faq" class="extra-section">
 
-    <h2>Frequently Asked Questions</h2>
+    <h2>FAQs</h2>
 
     <div class="info-card">
 
@@ -922,6 +1125,7 @@
         </div>
 
     </div>
+
 
     <div class="info-card">
 
@@ -941,6 +1145,7 @@
 
     </div>
 
+
     <div class="info-card">
 
         <h3 class="faq-question">
@@ -957,6 +1162,7 @@
 
     </div>
 
+
     <div class="info-card">
 
         <h3 class="faq-question">
@@ -972,6 +1178,7 @@
         </div>
 
     </div>
+
 
     <div class="info-card">
 
@@ -994,7 +1201,7 @@
 
 </section>
 
-<!-- EMERGENCY SUPPORT -->
+
 
 <section id="emergency-support" class="emergency-box">
 
@@ -1017,7 +1224,6 @@
 
 </section>
 
-<!-- READY TO TALK -->
 
 <section id="ready-to-talk" class="extra-section">
 
@@ -1042,7 +1248,6 @@
 
 </section>
 
-<!-- HELPFUL INFORMATION -->
 
 <section id="resources" class="extra-section">
 
@@ -1084,7 +1289,7 @@
 
 </section>
 
-<!-- PRIVACY -->
+
 
 <section id="privacy" class="extra-section">
 
@@ -1104,7 +1309,7 @@
 
 </section>
 
-<!-- QUICK LINKS -->
+
 
 <section id="quick-links" class="extra-section">
 
@@ -1142,7 +1347,7 @@
 
     <p>
         <a href="#faq" style="color:blue;">
-            Frequently Asked Questions
+            FAQs
         </a>
     </p>
 
@@ -1166,7 +1371,7 @@
 
 </section>
 
-<!-- BACK TO TOP -->
+
 
 <button
     class="back-to-top"
@@ -1175,9 +1380,46 @@
     Back to Top
 </button>
 
-<!-- LIVE CHAT FUNCTIONALITY -->
+
 
 <script>
+
+    function showService(serviceId) {
+
+        const serviceCards =
+            document.querySelectorAll('.service-detail');
+
+        const selectionMessage =
+            document.getElementById('service-selection-message');
+
+        serviceCards.forEach(function(card) {
+
+            card.classList.remove('active');
+
+        });
+
+        const selectedService =
+            document.getElementById(serviceId);
+
+        if (selectedService) {
+
+            selectedService.classList.add('active');
+
+            if (selectionMessage) {
+
+                selectionMessage.style.display = 'none';
+
+            }
+
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth'
+            });
+
+        }
+
+    }
+
+
 
     const chatInput =
         document.querySelector('.live-chat input');
@@ -1187,6 +1429,7 @@
 
     const chatMessages =
         document.querySelector('.chat-messages');
+
 
     if (chatInput && chatButton && chatMessages) {
 
@@ -1209,6 +1452,7 @@
 
                 chatInput.value = '';
 
+
                 const response =
                     document.createElement('p');
 
@@ -1219,9 +1463,11 @@
                 chatMessages.appendChild(
                     response
                 );
+
             }
 
         });
+
 
         chatInput.addEventListener(
             'keypress',
@@ -1238,7 +1484,7 @@
 
     }
 
-    /* SMOOTH SCROLLING */
+
 
     document
         .querySelectorAll('a[href^="#"]')
@@ -1248,18 +1494,34 @@
                 'click',
                 function(event) {
 
-                    const target =
-                        document.querySelector(
-                            this.getAttribute('href')
-                        );
+                    const href =
+                        this.getAttribute('href');
 
-                    if (target) {
+                    if (
+                        href !== '#stress' &&
+                        href !== '#anxiety' &&
+                        href !== '#relationships' &&
+                        href !== '#self-awareness' &&
+                        href !== '#addiction' &&
+                        href !== '#bereavement' &&
+                        href !== '#couples-therapy' &&
+                        href !== '#work-related-stress' &&
+                        href !== '#neurodiversity' &&
+                        href !== '#trauma'
+                    ) {
 
-                        event.preventDefault();
+                        const target =
+                            document.querySelector(href);
 
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                        if (target) {
+
+                            event.preventDefault();
+
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+
+                        }
 
                     }
 
@@ -1270,6 +1532,8 @@
 
 </script>
 
+
+
 <footer>
 
     <p>
@@ -1277,6 +1541,7 @@
     </p>
 
 </footer>
+
 
 </body>
 </html>
